@@ -1,0 +1,15 @@
+Source: librpc-serialized-perl
+Section: perl
+Priority: optional
+Build-Depends: debhelper (>= 4.0.2)
+Build-Depends-Indep: perl (>= 5.8.0-7), libdata-serializer-perl, libexception-class-perl, liburi-perl, libio-string-perl, libclass-accessor-fast-contained-perl, libmodule-multiconf-perl, libreadonly-perl
+Maintainer: Oliver Gorwits <oliver.gorwits@oucs.ox.ac.uk>
+Standards-Version: 3.6.1
+
+Package: librpc-serialized-perl
+Architecture: all
+Depends: ${perl:Depends}, libdata-serializer-perl, libexception-class-perl, libclass-accessor-fast-contained-perl, libmodule-multiconf-perl, libreadonly-perl
+Recommends: ucspi-tcp, ucspi-ipc, daemontools, libio-socket-negkrb5-perl, liblog-dispatch-perl
+Description:  Perl modules for building RPC client server applications
+ This package provides Perl modules for building remote procedure call (RPC)
+ clients and servers which use Data::Serializer as a transport layer.

@@ -1,0 +1,138 @@
+librpc-serialized-perl (0.0605-1) unstable; urgency=low
+
+  * Missed a path fix for previous.
+
+ -- Oliver Gorwits <oliver.gorwits@.oucs.ox.ac.uk>  Mon, 31 Mar 2008 13:33:09 +0100
+
+librpc-serialized-perl (0.0604-1) unstable; urgency=low
+
+  *  Further loosen regex on $! in tests - filesystem issues
+
+ -- Oliver Gorwits <oliver.gorwits@.oucs.ox.ac.uk>  Sun, 30 Mar 2008 20:32:03 +0100
+
+librpc-serialized-perl (0.0603-1) unstable; urgency=low
+
+  * Loosen test check for $! - some localized err msgs don't match test
+
+ -- Oliver Gorwits <oliver.gorwits@.oucs.ox.ac.uk>  Fri, 21 Mar 2008 13:09:59 +0000
+
+librpc-serialized-perl (0.0602-1) unstable; urgency=low
+
+  * Bug in t/45-gdbm, GDBM_File is not always available
+
+ -- Oliver Gorwits <oliver.gorwits@oucs.ox.ac.uk>  Tue, 24 Jul 2007 18:59:00 +0100
+
+librpc-serialized-perl (0.0601-1) unstable; urgency=low
+
+  * Remove prod of Carp package, to appease the CPAN indexer
+
+ -- Oliver Gorwits <oliver.gorwits@oucs.ox.ac.uk>  Mon, 23 Jul 2007 21:35:00 +0100
+
+librpc-serialized-perl (0.0600-1) unstable; urgency=low
+
+  * Bug fixes in tests
+  * Version bump for CPAN stable release
+
+ -- Oliver Gorwits <oliver.gorwits@oucs.ox.ac.uk>  Mon, 23 Jul 2007 21:11:00 +0100
+
+librpc-serialized-perl (0.0599_05-1) unstable; urgency=low
+
+  * Bug fixes in Server.pm
+
+ -- Oliver Gorwits <oliver.gorwits@oucs.ox.ac.uk>  Wed, 11 Jul 2007 15:42:00 +0100
+
+librpc-serialized-perl (0.0599_04-1) unstable; urgency=low
+
+  * Refactor between Serialized.pm and Serialized/Server.pm to remove server
+    specific bits from the general base package
+  * Add population of the handlers lookup table into Server::new
+
+ -- Oliver Gorwits <oliver.gorwits@oucs.ox.ac.uk>  Wed, 11 Jul 2007 15:16:00 +0100
+
+librpc-serialized-perl (0.0599_03-1) unstable; urgency=low
+
+  * Quiesce the Carp::carp noise from inside Data::Serializer by turning them
+    into exceptions (Carp::croak) which are caught by this module
+  * Add better logging via the trace config option and Log::Dispatch::Syslog
+  * Support legacy YAML::RPC2 wire protocol via debug flag (i.e. it is
+    intended this is just for you to debug and then flip to full Serialization)
+  * Rename run() to process() to avoid clash with Net::Server->run()
+  * Add timeout alarms to process() around send, recv and dispatch
+  * Allow the server to respond with all settings (not just serializer) used
+    in the request
+  * Change to use Module::MultiConf to configure each module used, and
+    also RPC::Serialized itself
+  * Allow handlers to be 'autoloaded' by using handler_namespaces arrayref
+    option, and some handler call naming magic
+  * Add new Server using Net::Server in PreFork mode
+  * Debug mode is a bit smarter about adding trailing newlines
+  * Rename exceptions into the RPC::Serialized::X namespace
+  * Added documentation
+
+ -- Oliver Gorwits <oliver.gorwits@oucs.ox.ac.uk>  Tue, 10 Jul 2007 21:50:00 +0100
+
+librpc-serialized-perl (0.0599_02-1) unstable; urgency=low
+
+  * Alter default on-the-wire protocol to not need a record separator
+    (records are now all each one line)
+  * Allow the server to respond with Serializer which is not that set in the
+    current Data::Serializer object.
+
+ -- Oliver Gorwits <oliver.gorwits@oucs.ox.ac.uk>  Mon,  2 Jul 2007 20:16:00 +0100
+
+librpc-serialized-perl (0.0599_01-1) unstable; urgency=low
+
+  * Use Data::Serializer as a replacement for YAML
+  * Ported all modules to the RPC::Serialized namespace
+  * Ported all tests to use this new namespace
+  * Alter Exception::Class exceptions to use namespace-imported aliases
+  * Some small tweaks here and there for coding style
+  * Use Class::Accessor::Fast::Contained instead of Class::Accessor
+  * Use Config::Any for config instead of YAML
+
+ -- Oliver Gorwits <oliver.gorwits@oucs.ox.ac.uk>  Mon,  2 Jul 2007 16:43:00 +0100
+
+libyaml-rpc2-perl (0.05-1) unstable; urgency=low
+
+  * Switched all usage of the YAML module with YAML::Syck
+
+ -- Stephen Quinney <stephen@herald.ox.ac.uk>  Thu, 26 Jan 2006 14:56:08 +0000
+
+libyaml-rpc2-perl (0.04-1) unstable; urgency=low
+
+  * Set "local $YAML::UseBlock = 1;" before all calls to YAML::Dump. This
+    fixes problems with dumping some large blocks of text.
+
+ -- Stephen Quinney <stephen@herald.ox.ac.uk>  Thu,  1 Sep 2005 09:14:37 +0100
+
+libyaml-rpc2-perl (0.03-2) unstable; urgency=low
+
+  * Really add dependency on libclass-accessor-perl.
+
+ -- Ray Miller <ray@sysdev.oucs.ox.ac.uk>  Tue,  9 Aug 2005 08:34:38 +0100
+
+libyaml-rpc2-perl (0.03-1) unstable; urgency=low
+
+  * Update Server.pm to dereference $args array in call to target(); this
+    makes it consistent with invoke().
+
+ -- Ray Miller <ray@sysdev.oucs.ox.ac.uk>  Fri, 29 Jul 2005 13:16:03 +0100
+
+libyaml-rpc2-perl (0.02-1) unstable; urgency=low
+
+  * Added dependency and build dependency on liburi-perl and 
+    libclass-accessor-perl.
+  * Removed dependency on libio-string-perl.
+  * Added build dependency on libyaml-perl.
+  * Added configuration module, YAML::RPC2::Config and tests.
+  * Added (highly-configurable) yaml-rpc2-server.
+  * Updated examples.
+  * Made bin/mkgdbm_group more general and renamed to sbin/mkgdbm.
+  
+ -- Ray Miller <ray@sysdev.oucs.ox.ac.uk>  Thu, 28 Jul 2005 10:07:18 +0100
+
+libyaml-rpc2-perl (0.01-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Ray Miller <ray@sysdev.oucs.ox.ac.uk>  Thu, 21 Jul 2005 08:11:52 +0100

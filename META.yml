@@ -1,0 +1,15 @@
+# http://module-build.sourceforge.net/META-spec.html
+#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
+name:         RPC-Serialized
+version:      '0.0605'
+version_from: lib/RPC/Serialized.pm
+installdirs:  site
+requires:
+    Data::Serializer:                   0.41
+    Exception::Class:                   1.19
+    Module::MultiConf:                  0.02
+    Readonly:                           1.03
+    Class::Accessor::Fast::Contained:   0.05
+
+distribution_type: module
+generated_by: ExtUtils::MakeMaker version 6.17
