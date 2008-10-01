@@ -7,6 +7,7 @@ t/30-rpc-serialized-client.t
 t/35-rpc-serialized-client-inet.t
 t/35-rpc-serialized-client-negkrb5.t
 t/35-rpc-serialized-client-stdio.t
+t/35-rpc-serialized-client-ssl.t
 t/35-rpc-serialized-client-unix.t
 t/40-rpc-serialized-acl-group.t
 t/40-rpc-serialized-acl-operation.t
@@ -30,6 +31,7 @@ lib/RPC/Serialized/Client/UNIX.pm
 lib/RPC/Serialized/Client/INET.pm
 lib/RPC/Serialized/Client/NegKrb5.pm
 lib/RPC/Serialized/Client/STDIO.pm
+lib/RPC/Serialized/Client/SSL.pm
 lib/RPC/Serialized/Server.pm
 lib/RPC/Serialized/Handler.pm
 lib/RPC/Serialized/Client.pm
@@ -43,6 +45,7 @@ lib/RPC/Serialized/Server/UCSPI/NegKrb5.pm
 lib/RPC/Serialized/Server/UCSPI.pm
 lib/RPC/Serialized/Server/STDIO.pm
 lib/RPC/Serialized/Server/NetServer.pm
+lib/RPC/Serialized/Server/NetServer/SSL.pm
 lib/RPC/Serialized/ACL.pm
 lib/RPC/Serialized/ACL/Subject.pm
 lib/RPC/Serialized/ACL/Operation.pm
