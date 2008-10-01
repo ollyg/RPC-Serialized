@@ -2,7 +2,7 @@
 # $HeadURL: https://svn.oucs.ox.ac.uk/networks/src/debian/packages/libr/librpc-serialized-perl/trunk/lib/RPC/Serialized/Server/NetServer.pm $
 # $LastChangedRevision: 1337 $
 # $LastChangedDate: 2007-07-11 15:17:56 +0100 (Wed, 11 Jul 2007) $
-# $LastChangedBy: oliver $
+# $LastChangedBy$
 #
 package RPC::Serialized::Server::NetServer;
 

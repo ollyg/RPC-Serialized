@@ -5,7 +5,7 @@
 # $HeadURL: https://svn.oucs.ox.ac.uk/networks/src/debian/packages/libr/librpc-serialized-perl/trunk/examples/mkgdbm $
 # $LastChangedRevision: 1327 $
 # $LastChangedDate: 2007-07-10 21:56:45 +0100 (Tue, 10 Jul 2007) $
-# $LastChangedBy: oliver $
+# $LastChangedBy$
 #
 
 use strict;

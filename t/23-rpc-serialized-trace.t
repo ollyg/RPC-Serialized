@@ -3,7 +3,7 @@
 # $HeadURL: https://svn.oucs.ox.ac.uk/networks/src/debian/packages/libr/librpc-serialized-perl/trunk/t/23-rpc-serialized-trace.t $
 # $LastChangedRevision: 1359 $
 # $LastChangedDate: 2007-07-23 21:12:25 +0100 (Mon, 23 Jul 2007) $
-# $LastChangedBy: oliver $
+# $LastChangedBy$
 #
 
 use strict;

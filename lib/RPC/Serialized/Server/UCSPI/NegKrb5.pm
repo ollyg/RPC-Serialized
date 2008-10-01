@@ -2,7 +2,7 @@
 # $HeadURL: https://svn.oucs.ox.ac.uk/networks/src/debian/packages/libr/librpc-serialized-perl/trunk/lib/RPC/Serialized/Server/UCSPI/NegKrb5.pm $
 # $LastChangedRevision: 1321 $
 # $LastChangedDate: 2007-07-08 22:39:39 +0100 (Sun, 08 Jul 2007) $
-# $LastChangedBy: oliver $
+# $LastChangedBy$
 #
 package RPC::Serialized::Server::UCSPI::NegKrb5;
 

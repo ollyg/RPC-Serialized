@@ -2,7 +2,7 @@
 # $HeadURL: https://svn.oucs.ox.ac.uk/networks/src/debian/packages/libr/librpc-serialized-perl/trunk/lib/RPC/Serialized/Server/STDIO.pm $
 # $LastChangedRevision: 1326 $
 # $LastChangedDate: 2007-07-10 21:41:52 +0100 (Tue, 10 Jul 2007) $
-# $LastChangedBy: oliver $
+# $LastChangedBy$
 #
 package RPC::Serialized::Server::STDIO;
 

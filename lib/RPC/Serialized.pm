@@ -2,7 +2,7 @@
 # $HeadURL: https://svn.oucs.ox.ac.uk/networks/src/debian/packages/libr/librpc-serialized-perl/trunk/lib/RPC/Serialized.pm $
 # $LastChangedRevision: 1637 $
 # $LastChangedDate: 2008-03-31 13:34:26 +0100 (Mon, 31 Mar 2008) $
-# $LastChangedBy: oliver $
+# $LastChangedBy$
 #
 package RPC::Serialized;
 

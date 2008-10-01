@@ -3,7 +3,7 @@
 # $HeadURL: https://svn.oucs.ox.ac.uk/networks/src/debian/packages/libr/librpc-serialized-perl/trunk/t/92-rpc-serialized-client-server-namespaces.t $
 # $LastChangedRevision: 1323 $
 # $LastChangedDate: 2007-07-09 17:10:19 +0100 (Mon, 09 Jul 2007) $
-# $LastChangedBy: oliver $
+# $LastChangedBy$
 #
 
 use strict;
