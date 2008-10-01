@@ -133,7 +133,7 @@ Oliver Gorwits C<< <oliver.gorwits@oucs.ox.ac.uk> >>
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright (c) The University of Oxford 2007. All Rights Reserved.
+Copyright (c) The University of Oxford 2008. All Rights Reserved.
 
 This program is free software; you can redistribute it and/or modify it under
 the terms of version 2 of the GNU General Public License as published by the
