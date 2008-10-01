@@ -16,7 +16,7 @@ use Data::Serializer;
 use RPC::Serialized::Config;
 use RPC::Serialized::Exceptions;
 
-our $VERSION = '0.0605';
+our $VERSION = '0.0701';
 
 __PACKAGE__->mk_ro_accessors(qw/
     debug
@@ -162,7 +162,7 @@ RPC::Serialized - Subroutine calls over the network using common serialization
 
 =head1 VERSION
 
-This document refers to version 0.0605 of RPC::Serialized
+This document refers to version 0.0701 of RPC::Serialized
 
 =head1 SYNOPSIS
 

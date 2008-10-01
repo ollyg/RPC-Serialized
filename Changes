@@ -1,3 +1,7 @@
+librpc-serialized-perl (0.0701-1) unstable; urgency=low
+
+  * Added IO::Socket::SSL client and server (Oleg A. Mamontov)
+  
 librpc-serialized-perl (0.0605-1) unstable; urgency=low
 
   * Missed a path fix for previous.

@@ -3,7 +3,7 @@ NAME
     serialization
 
 VERSION
-    This document refers to version 0.0605 of RPC::Serialized
+    This document refers to version 0.0701 of RPC::Serialized
 
 SYNOPSIS
      # for the RPC server...
