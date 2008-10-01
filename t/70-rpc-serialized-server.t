@@ -1,8 +1,8 @@
 #!/usr/bin/perl
 #
-# $HeadURL$
+# $HeadURL: https://svn.oucs.ox.ac.uk/people/oliver/pub/librpc-serialized-perl/trunk/t/70-rpc-serialized-server.t $
 # $LastChangedRevision: 1297 $
-# $LastChangedDate: 2007-07-03 20:23:20 +0100 (Tue, 03 Jul 2007) $
+# $LastChangedDate$
 # $LastChangedBy: oliver $
 #
 

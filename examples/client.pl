@@ -1,8 +1,8 @@
 #!/usr/bin/perl
 #
-# $HeadURL$
+# $HeadURL: https://svn.oucs.ox.ac.uk/people/oliver/pub/librpc-serialized-perl/trunk/examples/client.pl $
 # $LastChangedRevision: 1330 $
-# $LastChangedDate: 2007-07-10 22:02:16 +0100 (Tue, 10 Jul 2007) $
+# $LastChangedDate$
 # $LastChangedBy: oliver $
 #
 

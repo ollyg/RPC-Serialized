@@ -2,9 +2,9 @@
 #
 # mkgdbm - Create GNU dbm file from key:value data.
 #
-# $HeadURL$
+# $HeadURL: https://svn.oucs.ox.ac.uk/people/oliver/pub/librpc-serialized-perl/trunk/examples/mkgdbm $
 # $LastChangedRevision: 1327 $
-# $LastChangedDate: 2007-07-10 21:56:45 +0100 (Tue, 10 Jul 2007) $
+# $LastChangedDate$
 # $LastChangedBy: oliver $
 #
 

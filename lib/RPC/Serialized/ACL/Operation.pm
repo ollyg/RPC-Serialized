@@ -1,7 +1,7 @@
 #
-# $HeadURL$
+# $HeadURL: https://svn.oucs.ox.ac.uk/people/oliver/pub/librpc-serialized-perl/trunk/lib/RPC/Serialized/ACL/Operation.pm $
 # $LastChangedRevision: 1281 $
-# $LastChangedDate: 2007-07-02 17:09:10 +0100 (Mon, 02 Jul 2007) $
+# $LastChangedDate$
 # $LastChangedBy: oliver $
 #
 package RPC::Serialized::ACL::Operation;

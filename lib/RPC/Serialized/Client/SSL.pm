@@ -1,7 +1,7 @@
 #
-# $HeadURL$
+# $HeadURL: https://svn.oucs.ox.ac.uk/people/oliver/pub/librpc-serialized-perl/trunk/lib/RPC/Serialized/Client/SSL.pm $
 # $LastChangedRevision: 1326 $
-# $LastChangedDate: 2007-07-10 21:41:52 +0100 (Tue, 10 Jul 2007) $
+# $LastChangedDate$
 # $LastChangedBy: oliver $
 #
 package RPC::Serialized::Client::SSL;

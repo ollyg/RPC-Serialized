@@ -1,8 +1,8 @@
 #!/usr/bin/perl
 #
-# $HeadURL$
+# $HeadURL: https://svn.oucs.ox.ac.uk/people/oliver/pub/librpc-serialized-perl/trunk/t/10-rpc-serialized-exception.t $
 # $LastChangedRevision: 1323 $
-# $LastChangedDate: 2007-07-09 17:10:19 +0100 (Mon, 09 Jul 2007) $
+# $LastChangedDate$
 # $LastChangedBy: oliver $
 #
 

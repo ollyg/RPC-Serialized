@@ -1,8 +1,8 @@
 #!/usr/bin/perl
 #
-# $HeadURL$
+# $HeadURL: https://svn.oucs.ox.ac.uk/people/oliver/pub/librpc-serialized-perl/trunk/t/65-rpc-serialized-authz-handler-acl.t $
 # $LastChangedRevision: 1635 $
-# $LastChangedDate: 2008-03-30 20:33:48 +0100 (Sun, 30 Mar 2008) $
+# $LastChangedDate$
 # $LastChangedBy: oliver $
 #
 

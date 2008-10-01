@@ -1,7 +1,7 @@
 #
-# $HeadURL$
+# $HeadURL: https://svn.oucs.ox.ac.uk/people/oliver/pub/librpc-serialized-perl/trunk/lib/RPC/Serialized/Server.pm $
 # $LastChangedRevision: 1338 $
-# $LastChangedDate: 2007-07-11 15:44:13 +0100 (Wed, 11 Jul 2007) $
+# $LastChangedDate$
 # $LastChangedBy: oliver $
 #
 package RPC::Serialized::Server;

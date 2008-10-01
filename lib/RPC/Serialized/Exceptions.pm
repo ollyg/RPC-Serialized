@@ -1,7 +1,7 @@
 #
-# $HeadURL$
+# $HeadURL: https://svn.oucs.ox.ac.uk/people/oliver/pub/librpc-serialized-perl/trunk/lib/RPC/Serialized/Exceptions.pm $
 # $LastChangedRevision: 1361 $
-# $LastChangedDate: 2007-07-23 21:36:03 +0100 (Mon, 23 Jul 2007) $
+# $LastChangedDate$
 # $LastChangedBy: oliver $
 #
 package RPC::Serialized::Exceptions;

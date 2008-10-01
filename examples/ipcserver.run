@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# $HeadURL$
+# $HeadURL: https://svn.oucs.ox.ac.uk/people/oliver/pub/librpc-serialized-perl/trunk/examples/ipcserver.run $
 # $LastChangedRevision: 1281 $
-# $LastChangedDate: 2007-07-02 17:09:10 +0100 (Mon, 02 Jul 2007) $
+# $LastChangedDate$
 # $LastChangedBy: oliver $
 #
 # Daemontools run script for RPC::Serialized::Server running under ipcserver.
