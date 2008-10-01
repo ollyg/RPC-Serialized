@@ -1,8 +1,8 @@
 #
-# $HeadURL: https://svn.oucs.ox.ac.uk/networks/src/debian/packages/libr/librpc-serialized-perl/trunk/lib/RPC/Serialized/Client/INET.pm $
+# $HeadURL$
 # $LastChangedRevision: 1326 $
 # $LastChangedDate: 2007-07-10 21:41:52 +0100 (Tue, 10 Jul 2007) $
-# $LastChangedBy$
+# $LastChangedBy: oliver $
 #
 package RPC::Serialized::Client::SSL;
 

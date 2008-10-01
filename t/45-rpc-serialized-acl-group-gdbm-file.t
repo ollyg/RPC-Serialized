@@ -1,9 +1,9 @@
 #!/usr/bin/perl
 #
-# $HeadURL: https://svn.oucs.ox.ac.uk/networks/src/debian/packages/libr/librpc-serialized-perl/trunk/t/45-rpc-serialized-acl-group-gdbm-file.t $
+# $HeadURL$
 # $LastChangedRevision: 1363 $
 # $LastChangedDate: 2007-07-24 19:00:05 +0100 (Tue, 24 Jul 2007) $
-# $LastChangedBy$
+# $LastChangedBy: oliver $
 #
 
 use strict;

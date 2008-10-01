@@ -1,9 +1,9 @@
 #!/usr/bin/perl
 #
-# $HeadURL: https://svn.oucs.ox.ac.uk/networks/src/debian/packages/libr/librpc-serialized-perl/trunk/t/65-rpc-serialized-authz-handler-acl.t $
+# $HeadURL$
 # $LastChangedRevision: 1635 $
 # $LastChangedDate: 2008-03-30 20:33:48 +0100 (Sun, 30 Mar 2008) $
-# $LastChangedBy$
+# $LastChangedBy: oliver $
 #
 
 use strict;

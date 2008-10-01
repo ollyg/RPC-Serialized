@@ -1,8 +1,8 @@
 #
-# $HeadURL: https://svn.oucs.ox.ac.uk/networks/src/debian/packages/libr/librpc-serialized-perl/trunk/lib/RPC/Serialized/Config.pm $
+# $HeadURL$
 # $LastChangedRevision: 1323 $
 # $LastChangedDate: 2007-07-09 17:10:19 +0100 (Mon, 09 Jul 2007) $
-# $LastChangedBy$
+# $LastChangedBy: oliver $
 #
 package RPC::Serialized::Config;
 

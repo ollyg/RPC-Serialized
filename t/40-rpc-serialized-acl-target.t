@@ -1,9 +1,9 @@
 #!/usr/bin/perl
 #
-# $HeadURL: https://svn.oucs.ox.ac.uk/networks/src/debian/packages/libr/librpc-serialized-perl/trunk/t/40-rpc-serialized-acl-target.t $
+# $HeadURL$
 # $LastChangedRevision: 1323 $
 # $LastChangedDate: 2007-07-09 17:10:19 +0100 (Mon, 09 Jul 2007) $
-# $LastChangedBy$
+# $LastChangedBy: oliver $
 #
 
 use strict;

@@ -1,9 +1,9 @@
 #!/usr/bin/perl
 #
-# $HeadURL: https://svn.oucs.ox.ac.uk/networks/src/debian/packages/libr/librpc-serialized-perl/trunk/examples/client.pl $
+# $HeadURL$
 # $LastChangedRevision: 1330 $
 # $LastChangedDate: 2007-07-10 22:02:16 +0100 (Tue, 10 Jul 2007) $
-# $LastChangedBy$
+# $LastChangedBy: oliver $
 #
 
 use strict;

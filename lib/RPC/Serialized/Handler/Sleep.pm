@@ -1,8 +1,8 @@
 #
-# $HeadURL: https://svn.oucs.ox.ac.uk/networks/src/debian/packages/libr/librpc-serialized-perl/trunk/lib/RPC/Serialized/Handler/Sleep.pm $
+# $HeadURL$
 # $LastChangedRevision: 1322 $
 # $LastChangedDate: 2007-07-08 22:45:12 +0100 (Sun, 08 Jul 2007) $
-# $LastChangedBy$
+# $LastChangedBy: oliver $
 #
 package RPC::Serialized::Handler::Sleep;
 

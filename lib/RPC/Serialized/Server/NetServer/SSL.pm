@@ -1,8 +1,8 @@
 #
-# $HeadURL: https://svn.oucs.ox.ac.uk/people/oliver/pub/librpc-serialized-perl/trunk/lib/RPC/Serialized/Server/NetServer/SSL.pm $
+# $HeadURL$
 # $LastChangedRevision: 1337 $
 # $LastChangedDate: 2007-07-11 15:17:56 +0100 (Wed, 11 Jul 2007) $
-# $LastChangedBy$
+# $LastChangedBy: oliver $
 #
 package RPC::Serialized::Server::NetServer::SSL;
 
