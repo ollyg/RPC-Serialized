@@ -118,7 +118,7 @@ sub recv {
         if $io->error;
 
     chomp $data if defined $data;
-    return undef unless length($data);
+    return unless defined($data) && length($data);
 
     my @token = ();
     eval {

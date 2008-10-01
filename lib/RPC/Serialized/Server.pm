@@ -195,7 +195,7 @@ sub process {
     my $alarm_bak = 0;
     my @token_bak = ();
 
-    while ( not $self->ifh->eof ) {
+    while ( 1 ) {
         my ($response, @token);
 
         eval {
@@ -218,28 +218,27 @@ sub process {
             $response = $self->exception($@);
         }
 
-        if ($response) {
-            $self->log_response($response);
+        last unless $response;
+        $self->log_response($response);
 
-            # use same serializer for response as on received msg
-            @token_bak = $self->set_token(@token)
-                if !$self->debug;
+        # use same serializer for response as on received msg
+        @token_bak = $self->set_token(@token)
+            if !$self->debug;
 
-            eval {
-                local $SIG{ALRM} = sub { die "Timeout on Send\n" };
-                $alarm_bak = alarm $self->timeout;
-                $self->send($response);
-                alarm $alarm_bak;
-            };
-            if ($@) {
-                alarm $alarm_bak;
-                $self->restore_token(@token_bak) if !$self->debug;
-                throw_system $@; # likely caught outside of RPC::Serialized
-            }
-
-            # restore our default serializer
+        eval {
+            local $SIG{ALRM} = sub { die "Timeout on Send\n" };
+            $alarm_bak = alarm $self->timeout;
+            $self->send($response);
+            alarm $alarm_bak;
+        };
+        if ($@) {
+            alarm $alarm_bak;
             $self->restore_token(@token_bak) if !$self->debug;
+            throw_system $@; # likely caught outside of RPC::Serialized
         }
+
+        # restore our default serializer
+        $self->restore_token(@token_bak) if !$self->debug;
     }
 
     alarm $alarm_bak;
