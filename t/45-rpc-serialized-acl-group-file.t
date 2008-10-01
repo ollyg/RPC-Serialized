@@ -2,7 +2,7 @@
 #
 # $HeadURL: https://svn.oucs.ox.ac.uk/people/oliver/pub/librpc-serialized-perl/trunk/t/45-rpc-serialized-acl-group-file.t $
 # $LastChangedRevision: 1637 $
-# $LastChangedDate$
+# $LastChangedDate: 2008-10-01 16:16:56 +0100 (Wed, 01 Oct 2008) $
 # $LastChangedBy: oliver $
 #
 
