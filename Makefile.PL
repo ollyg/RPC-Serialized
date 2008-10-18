@@ -1,20 +1,18 @@
-use 5.008004;
-use ExtUtils::MakeMaker;
+use inc::Module::Install 0.67;
+perl_version '5.008001';
+  
+name           'RPC-Serialized';
+all_from       'lib/RPC/Serialized.pm';
 
-# See lib/ExtUtils/MakeMaker.pm for details of how to influence
-# the contents of the Makefile that is written.
+requires       'Data::Serializer' => '0.41';
+requires       'Exception::Class' => '1.19';
+requires       'Module::MultiConf' => '0.02';
+requires       'Readonly' => '1.03';
+requires       'Class::Accessor::Fast::Contained' => '0.05';
 
-WriteMakefile(
-    NAME              => 'RPC::Serialized',
-    VERSION_FROM      => 'lib/RPC/Serialized.pm', # finds $VERSION
-    PREREQ_PM         => {
-        Data::Serializer  => '0.41',
-        Exception::Class  => '1.19',
-        Module::MultiConf => '0.02',
-        Readonly          => '1.03',
-        Class::Accessor::Fast::Contained => '0.05',
-    },
-    ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
-      (ABSTRACT       => 'Perl modules for building RPC client/server applications',
-       AUTHOR         => 'Oliver Gorwits <oliver.gorwits@oucs.ox.ac.uk>') : ()),
-);
+test_requires  'Test::More' => 0;
+test_requires  'URI' => 0;
+test_requires  'IO::Socket::SSL' => 0;
+
+WriteAll;
+
