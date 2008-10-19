@@ -1,10 +1,4 @@
 Changes
-debian/changelog
-debian/compat
-debian/control
-debian/copyright
-debian/examples
-debian/rules
 examples/acl.conf
 examples/client.pl
 examples/ipcserver.run
