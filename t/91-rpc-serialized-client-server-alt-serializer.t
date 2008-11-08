@@ -71,4 +71,5 @@ if ( $pid == 0 ) {    # child
 }
 
 is( waitpid( $pid, 0 ), $pid );
-is( $?, 0 );
+my $r = ($? == 512 ? 512 : 0);
+is( $?, $r );

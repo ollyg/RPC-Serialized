@@ -2,6 +2,7 @@ librpc-serialized-perl (1.0701-1) unstable; urgency=low
 
   * Small fixes to the distribution
   * Get a grown up version number
+  * Fix some tests for 64bit platforms
   
 librpc-serialized-perl (0.0702-1) unstable; urgency=low
 
