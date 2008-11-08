@@ -10,7 +10,14 @@ requires       'Module::MultiConf' => '0.02';
 requires       'Readonly' => '1.03';
 requires       'Class::Accessor::Fast::Contained' => '0.05';
 
+recommends     'IO::Socket::SSL' => 0;
+recommends     'Net::Server::PreFork' => 0;
+recommends     'IO::Socket::NegKrb5' => 0;
+recommends     'URI' => 0;
+
 test_requires  'Test::More' => 0;
+test_requires  'Test::Pod' => 0;
+test_requires  'Test::Pod::Coverage' => 0;
 test_requires  'URI' => 0;
 test_requires  'IO::Socket::SSL' => 0;
 

@@ -1,3 +1,8 @@
+librpc-serialized-perl (1.0701-1) unstable; urgency=low
+
+  * Small fixes to the distribution
+  * Get a grown up version number
+  
 librpc-serialized-perl (0.0702-1) unstable; urgency=low
 
   * Fix dependencies and move to Module::Install to allow build/test dependencies
