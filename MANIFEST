@@ -77,4 +77,5 @@ t/80-rpc-serialized-server-ucspi-tcp.t
 t/90-rpc-serialized-client-server.t
 t/91-rpc-serialized-client-server-alt-serializer.t
 t/92-rpc-serialized-client-server-namespaces.t
-TODO
+t/pod-coverage.t
+t/pod.t
