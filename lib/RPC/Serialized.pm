@@ -16,7 +16,7 @@ use Data::Serializer;
 use RPC::Serialized::Config;
 use RPC::Serialized::Exceptions;
 
-our $VERSION = '1.0701';
+our $VERSION = '1.0801';
 $VERSION = eval $VERSION; # numify for warning-free dev releases
 
 __PACKAGE__->mk_ro_accessors(qw/
@@ -163,7 +163,7 @@ RPC::Serialized - Subroutine calls over the network using common serialization
 
 =head1 VERSION
 
-This document refers to version 1.0701 of RPC::Serialized
+This document refers to version 1.0801 of RPC::Serialized
 
 =head1 SYNOPSIS
 
@@ -637,10 +637,11 @@ For further details please see the L<Data::Serializer> manual page.
 The L<Net::Server> binding shipped with this module has some defaults set,
 although none are enforced so you can override all options to that module.
 
-The chosen I<personality> is C<PreFork>. If you want to use something else
-just copy the bundled binding module (C<RPC::Serialized::Server::NetServer>)
-and modify as appropriate. Default settings which differ from those in the
-native C<Net::Server> are as follows:
+The chosen I<personality> is C<PreFork>, and a C<Single> personality is also
+available. If you want to use something else just copy the bundled binding
+module (C<RPC::Serialized::Server::NetServer>) and modify as appropriate.
+Default settings which differ from those in the native C<Net::Server> are as
+follows:
 
 =over 4
 

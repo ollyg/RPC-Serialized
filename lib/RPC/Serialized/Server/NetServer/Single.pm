@@ -1,15 +1,15 @@
 #
-# $HeadURL: https://svn.oucs.ox.ac.uk/people/oliver/pub/librpc-serialized-perl/trunk/lib/RPC/Serialized/Server/NetServer.pm $
-# $LastChangedRevision: 1337 $
-# $LastChangedDate: 2008-10-01 16:16:56 +0100 (Wed, 01 Oct 2008) $
-# $LastChangedBy: oliver $
+# $HeadURL$
+# $LastChangedRevision$
+# $LastChangedDate$
+# $LastChangedBy$
 #
-package RPC::Serialized::Server::NetServer;
+package RPC::Serialized::Server::NetServer::Single;
 
 use strict;
 use warnings FATAL => 'all';
 
-use base 'Net::Server::PreFork';
+use base 'Net::Server::Single';
 use base 'Class::Accessor::Fast::Contained';
 
 use IO::Handle;
@@ -25,19 +25,13 @@ sub new {
     my $self = $class->SUPER::new( $params->net_server );
     $self->params(scalar $params);
 
+    $self->rs( RPC::Serialized::Server->new($self->params) );
+
     return $self;
 }
 
 sub default_values {
     return $_[0]->params->net_server;
-}
-
-sub child_init_hook {
-    my $self = shift;
-
-    $self->rs( RPC::Serialized::Server->new($self->params) );
-
-    return $self;
 }
 
 sub post_accept_hook {
@@ -62,27 +56,27 @@ __END__
 
 =head1 NAME
 
-RPC::Serialized::Server::NetServer - Run an RPC server using Net::Server
+RPC::Serialized::Server::NetServer::Single - Run a single-instance RPC server using Net::Server
 
 =head1 SYNOPSIS
 
- use RPC::Serialized::Server::NetServer;
+ use RPC::Serialized::Server::NetServer::Single;
  
  my $s = RPC::Serialized::Server::NetServer->new({
      net_server => { port => 1234 },
  });
  
- # note that $s isa Net::Server::PreFork, not an RPC::Serialized
+ # note that $s isa Net::Server::Single, not an RPC::Serialized
 
  s->run;
-     # server process is now looping and waiting for RPC (like Apache prefork)
+     # server process is now looping and waiting for RPC
      # the default port number for Net::Server is 20203
  
  
  # alternatively, if you have an external configuration file which
  # Config::Any can load, try the following:
  
- $s = RPC::Serialized::Server::NetServer->new('/path/to/config/file');
+ $s = RPC::Serialized::Server::NetServer::Single->new('/path/to/config/file');
  
  # you can also combine config file and hash reference arguments
 
@@ -90,15 +84,18 @@ RPC::Serialized::Server::NetServer - Run an RPC server using Net::Server
 
 This module provides a bridge between L<RPC::Serialized> and L<Net::Server>,
 meaning you can easily run an RPC server without installing any additional
-daemonizing tools onto your system. The module sets up a basic PreFork server,
-which runs much like Apache in PreFork mode, and you can override any of the
-default configuration to C<Net::Server>.
+daemonizing tools onto your system. The module sets up a single process server
+which will service requests serially. This can be very useful for tesing or
+debugging situations.
+
+This personality is based on a TCP listening socket. If you want a single
+process server which listens on Standard Input/Output, see
+L<RPC::Serialized::Server::STDIO>.
 
 It is strongly recommended that you at least once read through the
-L<Net::Server> manual page and the L<Net::Server::PreFork> manual page, to
-familiarize yourself with the configuration options. You do not need to worry
-much about the client connection processing or hooks, because that is dealt
-with inside of this module.
+L<Net::Server> manual page, to familiarize yourself with the configuration
+options. You do not need to worry much about the client connection processing
+or hooks, because that is dealt with inside of this module.
 
 =head1 CONFIGURATION
 
@@ -130,10 +127,6 @@ C<setsid> options if you would like a proper background daemon running.
 The logging output will go to STDERR, so to change this set the C<log_file>
 option. The C<Net::Server> manual page describes the values available.
 
-For performance tweaking, you might want to alter some of the
-C<Net::Server::PreFork> settings. Again, see the manual page for that module
-for further details.
-
 =head1 RUNNING THE SERVER
 
 Once you have instantiated a new server object using C<new()>, there is just
@@ -141,9 +134,9 @@ one method call to make to begin the processing loop:
 
  $s->run;
 
-This will fork the child handlers, and begin running as a server. Note that
-this is a method on the C<Net::Server> object and not C<RPC::Serialized>; it
-wraps the C<process()> call normally issued to that module in other servers.
+This will bind to the TCP port and begin running as a server. Note that this
+is a method on the C<Net::Server> object and not C<RPC::Serialized>; it wraps
+the C<process()> call normally issued to that module in other servers.
 
 =head1 AUTHOR
 

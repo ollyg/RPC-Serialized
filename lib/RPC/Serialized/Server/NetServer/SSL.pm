@@ -101,7 +101,7 @@ C<syslog-ng> can flexibly handle each facility.
 
 =head2 Things you might want to configure
 
-By default the server will remain in the foregrount, and not fork or detach
+By default the server will remain in the foreground, and not fork or detach
 from its parent process to become a daemon. Check the C<background> and
 C<setsid> options if you would like a proper background daemon running.
 
