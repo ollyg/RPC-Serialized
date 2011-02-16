@@ -1,9 +1,3 @@
-#
-# $HeadURL$
-# $LastChangedRevision$
-# $LastChangedDate$
-# $LastChangedBy$
-#
 package RPC::Serialized::Server::NetServer::Single;
 
 use strict;
@@ -52,11 +46,7 @@ sub process_request {
 
 1;
 
-__END__
-
-=head1 NAME
-
-RPC::Serialized::Server::NetServer::Single - Run a single-instance RPC server using Net::Server
+# ABSTRACT: Run a single-instance RPC server using Net::Server
 
 =head1 SYNOPSIS
 
@@ -138,29 +128,10 @@ This will bind to the TCP port and begin running as a server. Note that this
 is a method on the C<Net::Server> object and not C<RPC::Serialized>; it wraps
 the C<process()> call normally issued to that module in other servers.
 
-=head1 AUTHOR
-
-Oliver Gorwits C<< <oliver.gorwits@oucs.ox.ac.uk> >>
+=head1 THANKS
 
 This module is a derivative of C<YAML::RPC>, written by C<pod> and Ray Miller,
 at the University of Oxford Computing Services. Without their brilliant
 creation this system would not exist.
 
-=head1 COPYRIGHT & LICENSE
-
-Copyright (c) The University of Oxford 2007. All Rights Reserved.
-
-This program is free software; you can redistribute it and/or modify it under
-the terms of version 2 of the GNU General Public License as published by the
-Free Software Foundation.
-
-This program is distributed in the hope that it will be useful, but WITHOUT
-ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License along with
-this program; if not, write to the Free Software Foundation, Inc., 51 Franklin
-St, Fifth Floor, Boston, MA 02110-1301 USA
-
 =cut
-

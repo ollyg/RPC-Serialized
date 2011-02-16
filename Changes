@@ -1,3 +1,5 @@
+{{$NEXT}}
+
 librpc-serialized-perl (1.0801-1) unstable; urgency=low
 
   * Add a Single personality as alternative to PreFork

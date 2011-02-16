@@ -1,9 +1,3 @@
-#
-# $HeadURL: https://svn.oucs.ox.ac.uk/people/oliver/pub/librpc-serialized-perl/trunk/lib/RPC/Serialized.pm $
-# $LastChangedRevision: 1637 $
-# $LastChangedDate: 2008-10-01 16:16:56 +0100 (Wed, 01 Oct 2008) $
-# $LastChangedBy: oliver $
-#
 package RPC::Serialized;
 
 use strict;
@@ -15,9 +9,6 @@ use Readonly;
 use Data::Serializer;
 use RPC::Serialized::Config;
 use RPC::Serialized::Exceptions;
-
-our $VERSION = '1.0801';
-$VERSION = eval $VERSION; # numify for warning-free dev releases
 
 __PACKAGE__->mk_ro_accessors(qw/
     debug
@@ -155,15 +146,7 @@ sub DESTROY {
 
 1;
 
-__END__
-
-=head1 NAME
-
-RPC::Serialized - Subroutine calls over the network using common serialization
-
-=head1 VERSION
-
-This document refers to version 1.0801 of RPC::Serialized
+# ABSTRACT: Subroutine calls over the network using common serialization
 
 =head1 SYNOPSIS
 
@@ -956,20 +939,10 @@ To use some optional features, you may require the following:
 
 =back
 
-=head1 AUTHOR
-
-Oliver Gorwits C<< <oliver.gorwits@oucs.ox.ac.uk> >>
+=head1 THANKS
 
 This module is a derivative of C<YAML::RPC>, written by C<pod> and Ray Miller,
 at the University of Oxford Computing Services. Without their brilliant
 creation this system would not exist.
 
-=head1 COPYRIGHT & LICENSE
-
-Copyright (c) The University of Oxford 2008.
-
-This library is free software; you can redistribute it and/or modify it under
-the same terms as Perl itself.
-
 =cut
-
