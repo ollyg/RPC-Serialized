@@ -5,6 +5,9 @@
 # $LastChangedBy: oliver $
 #
 package RPC::Serialized::Client::NegKrb5;
+BEGIN {
+  $RPC::Serialized::Client::NegKrb5::VERSION = '1.110470';
+}
 
 use strict;
 use warnings FATAL => 'all';

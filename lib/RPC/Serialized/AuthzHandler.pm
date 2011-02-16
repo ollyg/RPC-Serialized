@@ -5,6 +5,9 @@
 # $LastChangedBy: oliver $
 #
 package RPC::Serialized::AuthzHandler;
+BEGIN {
+  $RPC::Serialized::AuthzHandler::VERSION = '1.110470';
+}
 
 use strict;
 use warnings FATAL => 'all';

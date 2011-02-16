@@ -5,6 +5,9 @@
 # $LastChangedBy: oliver $
 #
 package RPC::Serialized::Server::UCSPI::NegKrb5;
+BEGIN {
+  $RPC::Serialized::Server::UCSPI::NegKrb5::VERSION = '1.110470';
+}
 
 use strict;
 use warnings FATAL => 'all';

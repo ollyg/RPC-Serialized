@@ -3,7 +3,7 @@ NAME
     serialization
 
 VERSION
-    This document refers to version 1.0801 of RPC::Serialized
+    version 1.110470
 
 SYNOPSIS
      # for the RPC server...
@@ -523,6 +523,28 @@ SERVER LOGGING
     set in "min_level". Note that the hash key used is
     "log_dispatch_syslog", as above.
 
+  Suppressing Sensitive Data
+    If you transmit sensitive data in the arguments to handler calls, but
+    also wish to log a trace of the handler call+args, then the
+    "args_suppress_log" configuration parameter will help.
+
+    This parameter takes a Hash reference where they keys are the names of
+    handlers and the values are Array references of sensitive argument
+    names. Naturally, this assumes treating of the "args" list as a Hash of
+    keys/values by the handler and you would only be able to use this
+    parameter in that situation. For example:
+
+     $s = RPC::Serialized::Server::NetServer->new({
+         rpc_serialized => { args_suppress_log => {
+             login => [qw/ password /],
+         }},
+     });
+
+    Using the above configuration, the "login" handler when called would not
+    log the value of the "password" named argument in its "args". The text
+    "[suppressed]" is output to the log in place of the named argument's
+    value.
+
 ERROR HANDLING
     This module makes use of Exception::Class when it needs to raise a
     critical error, but don't fret if this makes no sense to you. The
@@ -659,16 +681,17 @@ DEPENDENCIES
     Log::Dispatch
     GDBM_File
 
-AUTHOR
-    Oliver Gorwits "<oliver.gorwits@oucs.ox.ac.uk>"
-
+THANKS
     This module is a derivative of "YAML::RPC", written by "pod" and Ray
     Miller, at the University of Oxford Computing Services. Without their
     brilliant creation this system would not exist.
 
-COPYRIGHT & LICENSE
-    Copyright (c) The University of Oxford 2008.
+AUTHOR
+    Oliver Gorwits <oliver@cpan.org>
 
-    This library is free software; you can redistribute it and/or modify it
-    under the same terms as Perl itself.
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2011 by University of Oxford.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
 

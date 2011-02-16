@@ -5,6 +5,9 @@
 # $LastChangedBy: oliver $
 #
 package RPC::Serialized::Handler;
+BEGIN {
+  $RPC::Serialized::Handler::VERSION = '1.110470';
+}
 
 use strict;
 use warnings FATAL => 'all';

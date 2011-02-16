@@ -5,6 +5,9 @@
 # $LastChangedBy: oliver $
 #
 package RPC::Serialized::Exceptions;
+BEGIN {
+  $RPC::Serialized::Exceptions::VERSION = '1.110470';
+}
 
 use strict;
 use warnings FATAL => 'all';

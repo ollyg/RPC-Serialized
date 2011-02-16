@@ -5,6 +5,9 @@
 # $LastChangedBy: oliver $
 #
 package RPC::Serialized::Handler::Sleep;
+BEGIN {
+  $RPC::Serialized::Handler::Sleep::VERSION = '1.110470';
+}
 
 use strict;
 use warnings FATAL => 'all';

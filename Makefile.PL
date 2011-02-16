@@ -1,25 +1,76 @@
-use inc::Module::Install 0.67;
-perl_version '5.008001';
-  
-name           'RPC-Serialized';
-all_from       'lib/RPC/Serialized.pm';
 
-requires       'Data::Serializer' => '0.41';
-requires       'Exception::Class' => '1.19';
-requires       'Module::MultiConf' => '0.02';
-requires       'Readonly' => '1.03';
-requires       'Class::Accessor::Fast::Contained' => '0.05';
+use strict;
+use warnings;
 
-recommends     'IO::Socket::SSL' => 0;
-recommends     'Net::Server::PreFork' => 0;
-recommends     'IO::Socket::NegKrb5' => 0;
-recommends     'URI' => 0;
 
-test_requires  'Test::More' => 0;
-test_requires  'Test::Pod' => 0;
-test_requires  'Test::Pod::Coverage' => 0;
-test_requires  'URI' => 0;
-test_requires  'IO::Socket::SSL' => 0;
 
-WriteAll;
+use ExtUtils::MakeMaker 6.31;
+
+
+
+my %WriteMakefileArgs = (
+  'ABSTRACT' => 'Subroutine calls over the network using common serialization',
+  'AUTHOR' => 'Oliver Gorwits <oliver@cpan.org>',
+  'BUILD_REQUIRES' => {
+    'File::Temp' => '0',
+    'IO::Pipe' => '0',
+    'IO::String' => '0',
+    'Test::More' => '0',
+    'URI::file' => '0'
+  },
+  'CONFIGURE_REQUIRES' => {
+    'ExtUtils::MakeMaker' => '6.31'
+  },
+  'DISTNAME' => 'RPC-Serialized',
+  'EXE_FILES' => [],
+  'LICENSE' => 'perl',
+  'NAME' => 'RPC::Serialized',
+  'PREREQ_PM' => {
+    'Carp' => '0',
+    'Class::Accessor::Fast::Contained' => '0',
+    'Data::Serializer' => '0',
+    'Exception::Class' => '0',
+    'GDBM_File' => '0',
+    'IO::File' => '0',
+    'IO::Handle' => '0',
+    'IO::Socket::INET' => '0',
+    'IO::Socket::NegKrb5' => '0',
+    'IO::Socket::SSL' => '0',
+    'IO::Socket::UNIX' => '0',
+    'Log::Dispatch::Syslog' => '0',
+    'Module::MultiConf' => '0',
+    'Net::Server::PreFork' => '0',
+    'Net::Server::Single' => '0',
+    'Readonly' => '0',
+    'Symbol' => '0',
+    'UNIVERSAL' => '0',
+    'URI' => '0',
+    'constant' => '0'
+  },
+  'VERSION' => '1.110470',
+  'test' => {
+    'TESTS' => 't/*.t'
+  }
+);
+
+
+unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
+  my $br = delete $WriteMakefileArgs{BUILD_REQUIRES};
+  my $pp = $WriteMakefileArgs{PREREQ_PM};
+  for my $mod ( keys %$br ) {
+    if ( exists $pp->{$mod} ) {
+      $pp->{$mod} = $br->{$mod} if $br->{$mod} > $pp->{$mod};
+    }
+    else {
+      $pp->{$mod} = $br->{$mod};
+    }
+  }
+}
+
+delete $WriteMakefileArgs{CONFIGURE_REQUIRES}
+  unless eval { ExtUtils::MakeMaker->VERSION(6.52) };
+
+WriteMakefile(%WriteMakefileArgs);
+
+
 

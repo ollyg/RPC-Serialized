@@ -1,10 +1,7 @@
-#
-# $HeadURL: https://svn.oucs.ox.ac.uk/people/oliver/pub/librpc-serialized-perl/trunk/lib/RPC/Serialized/Server/NetServer/SSL.pm $
-# $LastChangedRevision: 1337 $
-# $LastChangedDate: 2008-10-01 16:16:56 +0100 (Wed, 01 Oct 2008) $
-# $LastChangedBy: oliver $
-#
 package RPC::Serialized::Server::NetServer::SSL;
+BEGIN {
+  $RPC::Serialized::Server::NetServer::SSL::VERSION = '1.110470';
+}
 
 use strict;
 use warnings FATAL => 'all';
@@ -28,11 +25,19 @@ sub post_accept_hook {
 
 1;
 
+# ABSTRACT: Run an RPC server using IO::Socket::SSL
+
+
 __END__
+=pod
 
 =head1 NAME
 
 RPC::Serialized::Server::NetServer::SSL - Run an RPC server using IO::Socket::SSL
+
+=head1 VERSION
+
+version 1.110470
 
 =head1 SYNOPSIS
 
@@ -123,29 +128,20 @@ This will fork the child handlers, and begin running as a server. Note that
 this is a method on the C<Net::Server> object and not C<RPC::Serialized>; it
 wraps the C<process()> call normally issued to that module in other servers.
 
-=head1 AUTHOR
+=head1 THANKS
 
 Kindly submitted by Oleg A. Mamontov.
 
-=head1 MAINTAINER
+=head1 AUTHOR
 
-Oliver Gorwits C<< <oliver.gorwits@oucs.ox.ac.uk> >>
+Oliver Gorwits <oliver@cpan.org>
 
-=head1 COPYRIGHT & LICENSE
+=head1 COPYRIGHT AND LICENSE
 
-Copyright (c) The University of Oxford 2008. All Rights Reserved.
+This software is copyright (c) 2011 by University of Oxford.
 
-This program is free software; you can redistribute it and/or modify it under
-the terms of version 2 of the GNU General Public License as published by the
-Free Software Foundation.
-
-This program is distributed in the hope that it will be useful, but WITHOUT
-ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License along with
-this program; if not, write to the Free Software Foundation, Inc., 51 Franklin
-St, Fifth Floor, Boston, MA 02110-1301 USA
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut
 

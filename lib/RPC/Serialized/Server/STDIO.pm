@@ -1,10 +1,7 @@
-#
-# $HeadURL: https://svn.oucs.ox.ac.uk/people/oliver/pub/librpc-serialized-perl/trunk/lib/RPC/Serialized/Server/STDIO.pm $
-# $LastChangedRevision: 1326 $
-# $LastChangedDate: 2008-10-01 16:16:56 +0100 (Wed, 01 Oct 2008) $
-# $LastChangedBy: oliver $
-#
 package RPC::Serialized::Server::STDIO;
+BEGIN {
+  $RPC::Serialized::Server::STDIO::VERSION = '1.110470';
+}
 
 use strict;
 use warnings FATAL => 'all';
@@ -28,11 +25,19 @@ sub new {
 
 1;
 
+# ABSTRACT: Run a simple RPC server on STDIN and STDOUT
+
+
 __END__
+=pod
 
 =head1 NAME
 
 RPC::Serialized::Server::STDIO - Run a simple RPC server on STDIN and STDOUT
+
+=head1 VERSION
+
+version 1.110470
 
 =head1 SYNOPSIS
 
@@ -63,29 +68,22 @@ To start the server, issue the following command:
 
  $s->process;
 
-=head1 AUTHOR
-
-Oliver Gorwits C<< <oliver.gorwits@oucs.ox.ac.uk> >>
+=head1 THANKS
 
 This module is a derivative of C<YAML::RPC>, written by C<pod> and Ray Miller,
 at the University of Oxford Computing Services. Without their brilliant
 creation this system would not exist.
 
-=head1 COPYRIGHT & LICENSE
+=head1 AUTHOR
 
-Copyright (c) The University of Oxford 2007. All Rights Reserved.
+Oliver Gorwits <oliver@cpan.org>
 
-This program is free software; you can redistribute it and/or modify it under
-the terms of version 2 of the GNU General Public License as published by the
-Free Software Foundation.
+=head1 COPYRIGHT AND LICENSE
 
-This program is distributed in the hope that it will be useful, but WITHOUT
-ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+This software is copyright (c) 2011 by University of Oxford.
 
-You should have received a copy of the GNU General Public License along with
-this program; if not, write to the Free Software Foundation, Inc., 51 Franklin
-St, Fifth Floor, Boston, MA 02110-1301 USA
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut
 

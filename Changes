@@ -1,3 +1,8 @@
+1.110470  2011-02-16 22:19:07 Europe/London
+
+  * Port to Dist::Zilla
+  * New config param args_suppress_log (D. Hargreaves rp.cpan #65527)
+
 librpc-serialized-perl (1.0801-1) unstable; urgency=low
 
   * Add a Single personality as alternative to PreFork

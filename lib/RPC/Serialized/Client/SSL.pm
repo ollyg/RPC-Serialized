@@ -1,10 +1,7 @@
-#
-# $HeadURL: https://svn.oucs.ox.ac.uk/people/oliver/pub/librpc-serialized-perl/trunk/lib/RPC/Serialized/Client/SSL.pm $
-# $LastChangedRevision: 1326 $
-# $LastChangedDate: 2008-10-01 16:16:56 +0100 (Wed, 01 Oct 2008) $
-# $LastChangedBy: oliver $
-#
 package RPC::Serialized::Client::SSL;
+BEGIN {
+  $RPC::Serialized::Client::SSL::VERSION = '1.110470';
+}
 
 use strict;
 use warnings FATAL => 'all';
@@ -29,11 +26,19 @@ sub new {
 
 1;
 
+# ABSTRACT: SSL based RPC client
+
+
 __END__
+=pod
 
 =head1 NAME
 
 RPC::Serialized::Client::SSL - SSL based RPC client
+
+=head1 VERSION
+
+version 1.110470
 
 =head1 SYNOPSIS
 
@@ -62,29 +67,20 @@ For further information on how to pass these settings into C<RPC::Serialized>,
 and make RPC calls against the server, please see the L<RPC::Serialized>
 manual page.
 
-=head1 AUTHOR
+=head1 THANKS
 
 Kindly submitted by Oleg A. Mamontov.
 
-=head1 MAINTAINER
+=head1 AUTHOR
 
-Oliver Gorwits C<< <oliver.gorwits@oucs.ox.ac.uk> >>
+Oliver Gorwits <oliver@cpan.org>
 
-=head1 COPYRIGHT & LICENSE
+=head1 COPYRIGHT AND LICENSE
 
-Copyright (c) The University of Oxford 2008. All Rights Reserved.
+This software is copyright (c) 2011 by University of Oxford.
 
-This program is free software; you can redistribute it and/or modify it under
-the terms of version 2 of the GNU General Public License as published by the
-Free Software Foundation.
-
-This program is distributed in the hope that it will be useful, but WITHOUT
-ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License along with
-this program; if not, write to the Free Software Foundation, Inc., 51 Franklin
-St, Fifth Floor, Boston, MA 02110-1301 USA
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut
 

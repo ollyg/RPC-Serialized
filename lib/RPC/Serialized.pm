@@ -1,10 +1,7 @@
-#
-# $HeadURL: https://svn.oucs.ox.ac.uk/people/oliver/pub/librpc-serialized-perl/trunk/lib/RPC/Serialized.pm $
-# $LastChangedRevision: 1637 $
-# $LastChangedDate: 2008-10-01 16:16:56 +0100 (Wed, 01 Oct 2008) $
-# $LastChangedBy: oliver $
-#
 package RPC::Serialized;
+BEGIN {
+  $RPC::Serialized::VERSION = '1.110470';
+}
 
 use strict;
 use warnings FATAL => 'all';
@@ -15,9 +12,6 @@ use Readonly;
 use Data::Serializer;
 use RPC::Serialized::Config;
 use RPC::Serialized::Exceptions;
-
-our $VERSION = '1.0801';
-$VERSION = eval $VERSION; # numify for warning-free dev releases
 
 __PACKAGE__->mk_ro_accessors(qw/
     debug
@@ -155,7 +149,72 @@ sub DESTROY {
 
 1;
 
+# ABSTRACT: Subroutine calls over the network using common serialization
+
+
+# Here are some of the less common error messages. When more time is available
+# these will be futher documented:
+# 
+# =over 4
+# 
+# =item C<Permission denied> in an C<X::Authorization>
+# 
+# The authorization scheme loaded has refused to permit the current subject to
+# make the current call.
+# 
+# =item C<TCPREMOTEINFO not set> in an C<X::Authorization>
+# 
+# The C<UCSPI/TCP> server will look for the C<TCPREMOTEINFO> environment
+# variable, if authorization is enabled. See the C<ucspi-tcp> documentation for
+# details if you don't know how to enable this.
+# 
+# =item C<IPCREMOTEEUID not set> in an C<X::Authorization>
+# 
+# The C<UCSPI/IPC> server will look for the C<IPCREMOTEINFO> environment
+# variable, if authorization is enabled. See the <ucspi-ipc> documentation for
+# details if you don't know how to enable this.
+# 
+# =item C<getpwuid $uid failed> in an C<X::Authorization>
+# 
+# The C<UCSPI/IPC> server failed to get the username for the calling user. Only
+# happens if authorization has been enabled.
+# 
+# =item C<Not a RPC::Serialized::AuthzHandler> in an C<X::Application>
+# 
+# Server authorization is enabled but the specified handler does not inherit
+# from L<RPC::Serialized::AuthzHandler>.
+# 
+# =item C<Failed to open GDBM file...> in an C<X::System>
+# 
+# =item C<Missing or invalid URI> in an C<X::Application>
+# 
+# =item C<Can't determine path from URI ...> in an C<X::Application>
+# 
+# =item C<Failed to open ...> in an C<X::System>
+# 
+# =item C<Target name not specified> in an C<X::Application>
+# 
+# =item C<Failed to parse scheme from URI ...> in an C<X::Application>
+# 
+# =item C<Unsupported URI scheme ...> in an C<X::Application>
+# 
+# =item C<Failed to load ...> in an C<X::System>
+# 
+# =item C<Subject name not specified> in an C<X::Application>
+# 
+# =item C<Operation name not specified> in an C<X::Application>
+# 
+# =item C<Open $acl_path failed: ...> in an C<X::System>
+# 
+# =item C<Failed to parse ACLs at ...> in an C<X::Application>
+# 
+# =item C<ACL path not specified> in an C<X::Application>
+# 
+# =back
+
+
 __END__
+=pod
 
 =head1 NAME
 
@@ -163,7 +222,7 @@ RPC::Serialized - Subroutine calls over the network using common serialization
 
 =head1 VERSION
 
-This document refers to version 1.0801 of RPC::Serialized
+version 1.110470
 
 =head1 SYNOPSIS
 
@@ -718,6 +777,28 @@ C<new()>, like this:
 Log messages will be dispatched to your syslog subsystem at the level set in
 C<min_level>. Note that the hash key used is C<log_dispatch_syslog>, as above.
 
+=head2 Suppressing Sensitive Data
+
+If you transmit sensitive data in the arguments to handler calls, but also
+wish to log a trace of the handler call+args, then the C<args_suppress_log>
+configuration parameter will help.
+
+This parameter takes a Hash reference where they keys are the names of
+handlers and the values are Array references of sensitive argument names.
+Naturally, this assumes treating of the C<args> list as a Hash of keys/values
+by the handler and you would only be able to use this parameter in that
+situation. For example:
+
+ $s = RPC::Serialized::Server::NetServer->new({
+     rpc_serialized => { args_suppress_log => {
+         login => [qw/ password /],
+     }},
+ });
+
+Using the above configuration, the C<login> handler when called would not log
+the value of the C<password> named argument in its C<args>. The text
+C<[suppressed]> is output to the log in place of the named argument's value.
+
 =head1 ERROR HANDLING
 
 This module makes use of L<Exception::Class> when it needs to raise a critical
@@ -863,68 +944,6 @@ serialize or de-serialize data to or from the client or server.
 
 =back
 
-=cut
-
-# Here are some of the less common error messages. When more time is available
-# these will be futher documented:
-# 
-# =over 4
-# 
-# =item C<Permission denied> in an C<X::Authorization>
-# 
-# The authorization scheme loaded has refused to permit the current subject to
-# make the current call.
-# 
-# =item C<TCPREMOTEINFO not set> in an C<X::Authorization>
-# 
-# The C<UCSPI/TCP> server will look for the C<TCPREMOTEINFO> environment
-# variable, if authorization is enabled. See the C<ucspi-tcp> documentation for
-# details if you don't know how to enable this.
-# 
-# =item C<IPCREMOTEEUID not set> in an C<X::Authorization>
-# 
-# The C<UCSPI/IPC> server will look for the C<IPCREMOTEINFO> environment
-# variable, if authorization is enabled. See the <ucspi-ipc> documentation for
-# details if you don't know how to enable this.
-# 
-# =item C<getpwuid $uid failed> in an C<X::Authorization>
-# 
-# The C<UCSPI/IPC> server failed to get the username for the calling user. Only
-# happens if authorization has been enabled.
-# 
-# =item C<Not a RPC::Serialized::AuthzHandler> in an C<X::Application>
-# 
-# Server authorization is enabled but the specified handler does not inherit
-# from L<RPC::Serialized::AuthzHandler>.
-# 
-# =item C<Failed to open GDBM file...> in an C<X::System>
-# 
-# =item C<Missing or invalid URI> in an C<X::Application>
-# 
-# =item C<Can't determine path from URI ...> in an C<X::Application>
-# 
-# =item C<Failed to open ...> in an C<X::System>
-# 
-# =item C<Target name not specified> in an C<X::Application>
-# 
-# =item C<Failed to parse scheme from URI ...> in an C<X::Application>
-# 
-# =item C<Unsupported URI scheme ...> in an C<X::Application>
-# 
-# =item C<Failed to load ...> in an C<X::System>
-# 
-# =item C<Subject name not specified> in an C<X::Application>
-# 
-# =item C<Operation name not specified> in an C<X::Application>
-# 
-# =item C<Open $acl_path failed: ...> in an C<X::System>
-# 
-# =item C<Failed to parse ACLs at ...> in an C<X::Application>
-# 
-# =item C<ACL path not specified> in an C<X::Application>
-# 
-# =back
-
 =head1 DEPENDENCIES
 
 In addition to the contents of the standard Perl C<5.8.4> distribution, this
@@ -956,20 +975,22 @@ To use some optional features, you may require the following:
 
 =back
 
-=head1 AUTHOR
-
-Oliver Gorwits C<< <oliver.gorwits@oucs.ox.ac.uk> >>
+=head1 THANKS
 
 This module is a derivative of C<YAML::RPC>, written by C<pod> and Ray Miller,
 at the University of Oxford Computing Services. Without their brilliant
 creation this system would not exist.
 
-=head1 COPYRIGHT & LICENSE
+=head1 AUTHOR
 
-Copyright (c) The University of Oxford 2008.
+Oliver Gorwits <oliver@cpan.org>
 
-This library is free software; you can redistribute it and/or modify it under
-the same terms as Perl itself.
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2011 by University of Oxford.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut
 

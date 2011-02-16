@@ -5,6 +5,9 @@
 # $LastChangedBy: oliver $
 #
 package RPC::Serialized::ACL::Group;
+BEGIN {
+  $RPC::Serialized::ACL::Group::VERSION = '1.110470';
+}
 
 use strict;
 use warnings FATAL => 'all';

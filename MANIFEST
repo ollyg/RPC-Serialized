@@ -1,4 +1,10 @@
 Changes
+LICENSE
+MANIFEST
+META.json
+META.yml
+Makefile.PL
+README
 examples/acl.conf
 examples/inet-client.pl
 examples/inet-server.pl
@@ -7,15 +13,6 @@ examples/mkgdbm
 examples/rpc-serialized-server
 examples/server.yml
 examples/unix-client.pl
-inc/Module/Install.pm
-inc/Module/Install/Base.pm
-inc/Module/Install/Can.pm
-inc/Module/Install/Fetch.pm
-inc/Module/Install/Makefile.pm
-inc/Module/Install/Metadata.pm
-inc/Module/Install/Win32.pm
-inc/Module/Install/WriteAll.pm
-INSTALL
 lib/RPC/Serialized.pm
 lib/RPC/Serialized/ACL.pm
 lib/RPC/Serialized/ACL/Group.pm
@@ -40,17 +37,13 @@ lib/RPC/Serialized/Handler/Localtime.pm
 lib/RPC/Serialized/Handler/Sleep.pm
 lib/RPC/Serialized/Server.pm
 lib/RPC/Serialized/Server/NetServer.pm
-lib/RPC/Serialized/Server/NetServer/Single.pm
 lib/RPC/Serialized/Server/NetServer/SSL.pm
+lib/RPC/Serialized/Server/NetServer/Single.pm
 lib/RPC/Serialized/Server/STDIO.pm
 lib/RPC/Serialized/Server/UCSPI.pm
 lib/RPC/Serialized/Server/UCSPI/IPC.pm
 lib/RPC/Serialized/Server/UCSPI/NegKrb5.pm
 lib/RPC/Serialized/Server/UCSPI/TCP.pm
-Makefile.PL
-MANIFEST			This list of files
-META.yml
-README
 t/10-rpc-serialized-exception.t
 t/20-rpc-serialized.t
 t/21-rpc-serialized-init-serializer.t
@@ -80,5 +73,7 @@ t/80-rpc-serialized-server-ucspi-tcp.t
 t/90-rpc-serialized-client-server.t
 t/91-rpc-serialized-client-server-alt-serializer.t
 t/92-rpc-serialized-client-server-namespaces.t
+t/93-rpc-serialized-client-server-suppress-log.t
+t/lib/Handlers/Suppress.pm
 t/pod-coverage.t
 t/pod.t
