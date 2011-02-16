@@ -701,6 +701,28 @@ C<new()>, like this:
 Log messages will be dispatched to your syslog subsystem at the level set in
 C<min_level>. Note that the hash key used is C<log_dispatch_syslog>, as above.
 
+=head2 Suppressing Sensitive Data
+
+If you transmit sensitive data in the arguments to handler calls, but also
+wish to log a trace of the handler call+args, then the C<args_suppress_log>
+configuration parameter will help.
+
+This parameter takes a Hash reference where they keys are the names of
+handlers and the values are Array references of sensitive argument names.
+Naturally, this assumes treating of the C<args> list as a Hash of keys/values
+by the handler and you would only be able to use this parameter in that
+situation. For example:
+
+ $s = RPC::Serialized::Server::NetServer->new({
+     rpc_serialized => { args_suppress_log => {
+         login => [qw/ password /],
+     }},
+ });
+
+Using the above configuration, the C<login> handler when called would not log
+the value of the C<password> named argument in its C<args>. The text
+C<[suppressed]> is output to the log in place of the named argument's value.
+
 =head1 ERROR HANDLING
 
 This module makes use of L<Exception::Class> when it needs to raise a critical

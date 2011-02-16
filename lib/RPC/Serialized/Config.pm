@@ -1,9 +1,3 @@
-#
-# $HeadURL: https://svn.oucs.ox.ac.uk/people/oliver/pub/librpc-serialized-perl/trunk/lib/RPC/Serialized/Config.pm $
-# $LastChangedRevision: 1323 $
-# $LastChangedDate: 2008-10-01 16:16:56 +0100 (Wed, 01 Oct 2008) $
-# $LastChangedBy: oliver $
-#
 package RPC::Serialized::Config;
 
 use strict;
@@ -28,6 +22,7 @@ __PACKAGE__->Validate({
         debug        => { type => SCALAR, default => 0 },
         trace        => { type => SCALAR, default => 0 },
         timeout      => { type => SCALAR, default => 30 },
+        args_suppress_log => { type => HASHREF, default => {} },
     },
     net_server => {
         log_level => { type => SCALAR, default => 4 },

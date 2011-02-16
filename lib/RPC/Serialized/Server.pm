@@ -1,9 +1,3 @@
-#
-# $HeadURL: https://svn.oucs.ox.ac.uk/people/oliver/pub/librpc-serialized-perl/trunk/lib/RPC/Serialized/Server.pm $
-# $LastChangedRevision: 1338 $
-# $LastChangedDate: 2008-10-01 16:16:56 +0100 (Wed, 01 Oct 2008) $
-# $LastChangedBy: oliver $
-#
 package RPC::Serialized::Server;
 
 use strict;
@@ -20,7 +14,7 @@ __PACKAGE__->mk_ro_accessors(qw/
     timeout
 /);
 __PACKAGE__->mk_accessors(qw/
-    trace handler_namespaces
+    trace handler_namespaces args_suppress_log
 /);
 
 sub new {
@@ -65,6 +59,21 @@ sub log {
 sub log_call {
     my $self = shift;
     my ( $call, $args ) = @_;
+
+    # strip suppressed (sensitive) arguments, e.g. password fields
+    if (scalar @{$args} % 2 == 0
+        and exists $self->args_suppress_log->{$call}
+        and ref $self->args_suppress_log->{$call} eq ref []) {
+
+        my %args = @{$args};
+        foreach ( @{ $self->args_suppress_log->{$call} } ) {
+            if ( exists $args{$_} ) {
+                $args{$_} = '[suppressed]';
+            }
+        }
+        $args = [%args];
+    }
+
     $self->log( { CALL => $call, SUBJECT => $self->subject, ARGS => $args } );
 }
 
