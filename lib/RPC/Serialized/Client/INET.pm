@@ -1,6 +1,6 @@
 package RPC::Serialized::Client::INET;
-BEGIN {
-  $RPC::Serialized::Client::INET::VERSION = '1.110470';
+{
+  $RPC::Serialized::Client::INET::VERSION = '1.112530';
 }
 
 use strict;
@@ -38,7 +38,7 @@ RPC::Serialized::Client::INET - IPv4 socket RPC client
 
 =head1 VERSION
 
-version 1.110470
+version 1.112530
 
 =head1 SYNOPSIS
 

@@ -1,6 +1,6 @@
 package RPC::Serialized::Client::STDIO;
-BEGIN {
-  $RPC::Serialized::Client::STDIO::VERSION = '1.110470';
+{
+  $RPC::Serialized::Client::STDIO::VERSION = '1.112530';
 }
 
 use strict;
@@ -37,7 +37,7 @@ RPC::Serialized::Client::STDIO - RPC client using Standard I/O
 
 =head1 VERSION
 
-version 1.110470
+version 1.112530
 
 =head1 SYNOPSIS
 

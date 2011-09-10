@@ -1,6 +1,6 @@
 package RPC::Serialized::Server::UCSPI::TCP;
-BEGIN {
-  $RPC::Serialized::Server::UCSPI::TCP::VERSION = '1.110470';
+{
+  $RPC::Serialized::Server::UCSPI::TCP::VERSION = '1.112530';
 }
 
 use strict;
@@ -33,7 +33,7 @@ RPC::Serialized::Server::UCSPI::TCP - RPC server managed by DJB's ucspi-tpc
 
 =head1 VERSION
 
-version 1.110470
+version 1.112530
 
 =head1 SYNOPSIS
 

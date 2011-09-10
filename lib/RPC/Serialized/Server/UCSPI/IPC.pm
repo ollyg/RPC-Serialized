@@ -1,6 +1,6 @@
 package RPC::Serialized::Server::UCSPI::IPC;
-BEGIN {
-  $RPC::Serialized::Server::UCSPI::IPC::VERSION = '1.110470';
+{
+  $RPC::Serialized::Server::UCSPI::IPC::VERSION = '1.112530';
 }
 
 use strict;
@@ -36,7 +36,7 @@ RPC::Serialized::Server::UCSPI::IPC - RPC server managed by ucspi-ipc
 
 =head1 VERSION
 
-version 1.110470
+version 1.112530
 
 =head1 SYNOPSIS
 

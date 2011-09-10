@@ -1,6 +1,6 @@
 package RPC::Serialized::Client::UNIX;
-BEGIN {
-  $RPC::Serialized::Client::UNIX::VERSION = '1.110470';
+{
+  $RPC::Serialized::Client::UNIX::VERSION = '1.112530';
 }
 
 use strict;
@@ -38,7 +38,7 @@ RPC::Serialized::Client::UNIX - UNIX domain socket RPC client
 
 =head1 VERSION
 
-version 1.110470
+version 1.112530
 
 =head1 SYNOPSIS
 

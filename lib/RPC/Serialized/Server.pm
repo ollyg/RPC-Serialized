@@ -1,6 +1,6 @@
 package RPC::Serialized::Server;
-BEGIN {
-  $RPC::Serialized::Server::VERSION = '1.110470';
+{
+  $RPC::Serialized::Server::VERSION = '1.112530';
 }
 
 use strict;

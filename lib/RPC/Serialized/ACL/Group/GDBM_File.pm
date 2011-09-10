@@ -5,8 +5,8 @@
 # $LastChangedBy: oliver $
 #
 package RPC::Serialized::ACL::Group::GDBM_File;
-BEGIN {
-  $RPC::Serialized::ACL::Group::GDBM_File::VERSION = '1.110470';
+{
+  $RPC::Serialized::ACL::Group::GDBM_File::VERSION = '1.112530';
 }
 
 use strict;

@@ -5,8 +5,8 @@
 # $LastChangedBy: oliver $
 #
 package RPC::Serialized::Exceptions;
-BEGIN {
-  $RPC::Serialized::Exceptions::VERSION = '1.110470';
+{
+  $RPC::Serialized::Exceptions::VERSION = '1.112530';
 }
 
 use strict;

@@ -5,8 +5,8 @@
 # $LastChangedBy: oliver $
 #
 package RPC::Serialized::Handler::Sleep;
-BEGIN {
-  $RPC::Serialized::Handler::Sleep::VERSION = '1.110470';
+{
+  $RPC::Serialized::Handler::Sleep::VERSION = '1.112530';
 }
 
 use strict;

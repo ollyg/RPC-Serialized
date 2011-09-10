@@ -1,6 +1,6 @@
 package RPC::Serialized::Server::STDIO;
-BEGIN {
-  $RPC::Serialized::Server::STDIO::VERSION = '1.110470';
+{
+  $RPC::Serialized::Server::STDIO::VERSION = '1.112530';
 }
 
 use strict;
@@ -37,7 +37,7 @@ RPC::Serialized::Server::STDIO - Run a simple RPC server on STDIN and STDOUT
 
 =head1 VERSION
 
-version 1.110470
+version 1.112530
 
 =head1 SYNOPSIS
 

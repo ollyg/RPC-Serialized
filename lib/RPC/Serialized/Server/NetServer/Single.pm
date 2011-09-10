@@ -1,6 +1,6 @@
 package RPC::Serialized::Server::NetServer::Single;
-BEGIN {
-  $RPC::Serialized::Server::NetServer::Single::VERSION = '1.110470';
+{
+  $RPC::Serialized::Server::NetServer::Single::VERSION = '1.112530';
 }
 
 use strict;
@@ -61,7 +61,7 @@ RPC::Serialized::Server::NetServer::Single - Run a single-instance RPC server us
 
 =head1 VERSION
 
-version 1.110470
+version 1.112530
 
 =head1 SYNOPSIS
 

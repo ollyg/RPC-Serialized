@@ -5,8 +5,8 @@
 # $LastChangedBy: oliver $
 #
 package RPC::Serialized::Server::UCSPI::NegKrb5;
-BEGIN {
-  $RPC::Serialized::Server::UCSPI::NegKrb5::VERSION = '1.110470';
+{
+  $RPC::Serialized::Server::UCSPI::NegKrb5::VERSION = '1.112530';
 }
 
 use strict;

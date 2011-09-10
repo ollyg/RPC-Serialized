@@ -4,7 +4,7 @@
       "Oliver Gorwits <oliver@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.200000, CPAN::Meta::Converter version 2.102400",
+   "generated_by" : "Dist::Zilla version 4.300000, CPAN::Meta::Converter version 2.112150",
    "license" : [
       "perl_5"
    ],
@@ -16,7 +16,7 @@
    "prereqs" : {
       "configure" : {
          "requires" : {
-            "ExtUtils::MakeMaker" : "6.31"
+            "ExtUtils::MakeMaker" : "6.30"
          }
       },
       "runtime" : {
@@ -25,11 +25,9 @@
             "Class::Accessor::Fast::Contained" : 0,
             "Data::Serializer" : 0,
             "Exception::Class" : 0,
-            "GDBM_File" : 0,
             "IO::File" : 0,
             "IO::Handle" : 0,
             "IO::Socket::INET" : 0,
-            "IO::Socket::NegKrb5" : 0,
             "IO::Socket::SSL" : 0,
             "IO::Socket::UNIX" : 0,
             "Log::Dispatch::Syslog" : 0,
@@ -40,7 +38,10 @@
             "Symbol" : 0,
             "UNIVERSAL" : 0,
             "URI" : 0,
-            "constant" : 0
+            "base" : 0,
+            "constant" : 0,
+            "strict" : 0,
+            "warnings" : 0
          }
       },
       "test" : {
@@ -65,6 +66,6 @@
          "web" : "https://github.com/ollyg/RPC-Serialized"
       }
    },
-   "version" : "1.110470"
+   "version" : "1.112530"
 }
 

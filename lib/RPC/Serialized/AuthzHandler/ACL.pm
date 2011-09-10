@@ -5,8 +5,8 @@
 # $LastChangedBy: oliver $
 #
 package RPC::Serialized::AuthzHandler::ACL;
-BEGIN {
-  $RPC::Serialized::AuthzHandler::ACL::VERSION = '1.110470';
+{
+  $RPC::Serialized::AuthzHandler::ACL::VERSION = '1.112530';
 }
 
 use strict;

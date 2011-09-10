@@ -1,6 +1,6 @@
 package RPC::Serialized;
-BEGIN {
-  $RPC::Serialized::VERSION = '1.110470';
+{
+  $RPC::Serialized::VERSION = '1.112530';
 }
 
 use strict;
@@ -222,7 +222,7 @@ RPC::Serialized - Subroutine calls over the network using common serialization
 
 =head1 VERSION
 
-version 1.110470
+version 1.112530
 
 =head1 SYNOPSIS
 
