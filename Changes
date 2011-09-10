@@ -1,5 +1,7 @@
 {{$NEXT}}
 
+  * Fix dependencies to remove NegKrb5 and DBM Files
+
 1.110470  2011-02-16 22:19:07 Europe/London
 
   * Port to Dist::Zilla
