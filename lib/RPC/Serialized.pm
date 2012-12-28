@@ -624,6 +624,8 @@ construct so the code can die if needed. For example:
     }
  });
 
+=back
+
 =head1 CONFIGURING Data::Serializer
 
 The defaults for L<Data::Serializer>, which is used to encode and decode your
