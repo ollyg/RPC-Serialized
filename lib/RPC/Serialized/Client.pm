@@ -6,7 +6,7 @@
 #
 package RPC::Serialized::Client;
 {
-  $RPC::Serialized::Client::VERSION = '1.112530';
+  $RPC::Serialized::Client::VERSION = '1.123630';
 }
 
 use strict;

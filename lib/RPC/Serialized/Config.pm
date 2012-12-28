@@ -1,6 +1,6 @@
 package RPC::Serialized::Config;
 {
-  $RPC::Serialized::Config::VERSION = '1.112530';
+  $RPC::Serialized::Config::VERSION = '1.123630';
 }
 
 use strict;
@@ -19,6 +19,7 @@ __PACKAGE__->Validate({
     rpc_serialized => {
         server_class => { type => SCALAR, optional => 1 },
         handlers     => { type => HASHREF, optional => 1 },
+        callbacks    => { type => HASHREF, default => {} },
         handler_namespaces => { type => SCALAR | ARRAYREF,
                                 default => 'RPC::Serialized::Handler'},
         acl_path     => { type => SCALAR, optional => 1},

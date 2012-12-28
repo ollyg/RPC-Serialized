@@ -6,7 +6,7 @@
 #
 package RPC::Serialized::Client::NegKrb5;
 {
-  $RPC::Serialized::Client::NegKrb5::VERSION = '1.112530';
+  $RPC::Serialized::Client::NegKrb5::VERSION = '1.123630';
 }
 
 use strict;

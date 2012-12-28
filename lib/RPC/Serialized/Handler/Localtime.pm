@@ -6,7 +6,7 @@
 #
 package RPC::Serialized::Handler::Localtime;
 {
-  $RPC::Serialized::Handler::Localtime::VERSION = '1.112530';
+  $RPC::Serialized::Handler::Localtime::VERSION = '1.123630';
 }
 
 use strict;

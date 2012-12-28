@@ -74,6 +74,7 @@ t/90-rpc-serialized-client-server.t
 t/91-rpc-serialized-client-server-alt-serializer.t
 t/92-rpc-serialized-client-server-namespaces.t
 t/93-rpc-serialized-client-server-suppress-log.t
+t/94-rpc-serialized-client-server-pre_handler_argument_filter.t
 t/lib/Handlers/Suppress.pm
 t/pod-coverage.t
 t/pod.t

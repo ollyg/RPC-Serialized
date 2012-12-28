@@ -6,7 +6,7 @@
 #
 package RPC::Serialized::AuthzHandler;
 {
-  $RPC::Serialized::AuthzHandler::VERSION = '1.112530';
+  $RPC::Serialized::AuthzHandler::VERSION = '1.123630';
 }
 
 use strict;

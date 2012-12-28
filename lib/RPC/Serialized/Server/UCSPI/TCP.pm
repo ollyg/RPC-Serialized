@@ -1,6 +1,6 @@
 package RPC::Serialized::Server::UCSPI::TCP;
 {
-  $RPC::Serialized::Server::UCSPI::TCP::VERSION = '1.112530';
+  $RPC::Serialized::Server::UCSPI::TCP::VERSION = '1.123630';
 }
 
 use strict;
@@ -33,7 +33,7 @@ RPC::Serialized::Server::UCSPI::TCP - RPC server managed by DJB's ucspi-tpc
 
 =head1 VERSION
 
-version 1.112530
+version 1.123630
 
 =head1 SYNOPSIS
 
@@ -80,7 +80,7 @@ Oliver Gorwits <oliver@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by University of Oxford.
+This software is copyright (c) 2012 by University of Oxford.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

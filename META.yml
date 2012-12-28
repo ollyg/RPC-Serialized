@@ -43,4 +43,4 @@ resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=RPC-Serialized
   homepage: https://github.com/ollyg/RPC-Serialized/wiki
   repository: git://github.com/ollyg/RPC-Serialized.git
-version: 1.112530
+version: 1.123630

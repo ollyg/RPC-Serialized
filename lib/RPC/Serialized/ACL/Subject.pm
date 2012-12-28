@@ -6,7 +6,7 @@
 #
 package RPC::Serialized::ACL::Subject;
 {
-  $RPC::Serialized::ACL::Subject::VERSION = '1.112530';
+  $RPC::Serialized::ACL::Subject::VERSION = '1.123630';
 }
 
 use strict;

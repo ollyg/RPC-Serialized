@@ -1,3 +1,7 @@
+1.123630  2012-12-28 19:15:50 Europe/London
+
+  * Add callbacks support and pre_handler_argument_filter callback (E. Wasser)
+
 1.112530  2011-09-10 13:52:25 Europe/London
 
   * Fix dependencies to remove NegKrb5 and DBM Files

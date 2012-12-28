@@ -6,7 +6,7 @@
 #
 package RPC::Serialized::Handler;
 {
-  $RPC::Serialized::Handler::VERSION = '1.112530';
+  $RPC::Serialized::Handler::VERSION = '1.123630';
 }
 
 use strict;
