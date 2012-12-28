@@ -176,15 +176,13 @@ sub dispatch {
     $self->authorize( $call, $hc->target(@$args) )
         or throw_authz "Permission denied";
 
-    if ($self->callbacks->{pre_handler_argument_filter})
-    {
+    if ($self->callbacks->{pre_handler_argument_filter}) {
         eval {
             $args = [ $self->callbacks->{pre_handler_argument_filter}->(
-                { call => $call, server => $self->server },
+                { call => $call, server => $self },
                 @$args) ];
         };
-        if ($@)
-        {
+        if ($@) {
             throw_app sprintf("Callback '%s' for call '%s' returned %s"
               ,  'pre_handler_argument_filter'
               ,  $call
