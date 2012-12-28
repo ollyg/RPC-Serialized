@@ -584,7 +584,45 @@ true value, C<debug> prevents this. It can be very useful when combined with
 the C<STDIO> client and server, to test operations, as you can type CALLs in
 by hand at the console. The default value is false.
 
+=item C<callbacks>
+
+Hash reference with key value pairs of the callback names and the
+corresponding code reference. Currently only callback
+C<pre_handler_argument_filter> is working. It will be called B<after> the
+arguments were encoded from the RPC call and B<before> your RPC method will
+called. When the callback is called, its input parameters are:
+
+=over 4
+
+=item Hash Reference
+
+The contains just one parameter: C<server> and that is the C<Net::Server::*>
+.object
+
+=item List of Original RPC Parameters
+
+This is the normal list of parameters for you to filter.
+
 =back
+
+Returned values are the new RPC parameters. In the callback you can modify,
+add and/or remove parameters. The call is protected by an C<eval/throw_app>
+construct so the code can die if needed. For example:
+
+ my $c = RPC::Serialized::Client::INET->new({
+    ... OTHER OPTIONS ...
+    callbacks => {
+        pre_handler_argument_filter => sub {
+            my $opt = shift;
+            #   Net::Server::* object:
+            #   $opt->{server}
+            #   The normal arguments:
+            my @arguments = @_;
+            #   Return the reversed list of arguments 
+            return reverse @arguments;
+        },
+    }
+ });
 
 =head1 CONFIGURING Data::Serializer
 

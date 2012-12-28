@@ -14,7 +14,7 @@ __PACKAGE__->mk_ro_accessors(qw/
     timeout
 /);
 __PACKAGE__->mk_accessors(qw/
-    trace handler_namespaces args_suppress_log
+    trace handler_namespaces args_suppress_log callbacks
 /);
 
 sub new {
@@ -44,6 +44,8 @@ sub new {
     $self->{HANDLER} = $params->rpc_serialized->{handlers}
         if exists $params->rpc_serialized->{handlers};
     $self->{AUTHZ_HANDLER} = RPC::Serialized::AuthzHandler->new;
+    $self->{CALLBACKS} = $params->rpc_serialized->{callbacks}
+        if exists $params->rpc_serialized->{callbacks};
 
     return $self;
 }
@@ -174,6 +176,22 @@ sub dispatch {
     $self->authorize( $call, $hc->target(@$args) )
         or throw_authz "Permission denied";
 
+    if ($self->callbacks->{pre_handler_argument_filter})
+    {
+        eval {
+            $args = [ $self->callbacks->{pre_handler_argument_filter}->(
+                { call => $call, server => $self->server },
+                @$args) ];
+        };
+        if ($@)
+        {
+            throw_app sprintf("Callback '%s' for call '%s' returned %s"
+              ,  'pre_handler_argument_filter'
+              ,  $call
+              ,  $@);
+        }
+    }
+    
     return { RESPONSE => $hc->invoke(@$args) };
 }
 
